@@ -4,7 +4,7 @@
   "apps": [
     {
       "name": "OmniCard",
-      "bundleIdentifier": "com.Stefa008.OmniCard",
+      "bundleIdentifier": "Stefa008.OmniCard",
       "developerName": "Stefa008",
       "version": "1.0.",
       "versionDate": "2026-04-12",
