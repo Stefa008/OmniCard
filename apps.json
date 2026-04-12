@@ -1,0 +1,16 @@
+{
+  "name": "My Apps",
+  "identifier": "com.Stefa008.source",
+  "apps": [
+    {
+      "name": "OmniCard",
+      "bundleIdentifier": "com.Stefa008.OmniCard",
+      "developerName": "Stefa008",
+      "version": "1.0.",
+      "versionDate": "2026-04-12",
+      "downloadURL": "https://github.com/Stefa008/OmniCard/releases/download/v1.0/OmniCard_V1.0.ipa",
+      "localizedDescription": "My first app onAltStore! Now only available in Italy",
+      "iconURL": "https://githubusercontent.com"
+    }
+  ]
+}
