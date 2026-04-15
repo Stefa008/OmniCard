@@ -1,6 +1,6 @@
 # OmniCard 📦
 
-Un'app iOS per collezionisti di carte da gioco collezionabili (TCG), costruita interamente in **SwiftUI**. Cataloga, fotografa e tieni traccia del valore della tua collezione — tutto offline, tutto sul tuo dispositivo.
+Un'app per dispositivi iOS per collezionisti di carte da gioco collezionabili (TCG), costruita interamente in **SwiftUI**. Cataloga, fotografa e tieni traccia del valore della tua collezione — tutto offline, tutto sul tuo dispositivo.
 
 ---
 
@@ -16,6 +16,7 @@ Un'app iOS per collezionisti di carte da gioco collezionabili (TCG), costruita i
 - **Backup e ripristino** — esporta e importa l'intera collezione in formato JSON
 - **Profilo utente** — nome e foto profilo personalizzabili
 - **Dark mode** — supporto completo con toggle nelle impostazioni
+- **Selettore lingua** - Coming soon!
 
 ---
 
@@ -69,7 +70,7 @@ Un'app iOS per collezionisti di carte da gioco collezionabili (TCG), costruita i
 
 ### Tipi disponibili
 
-Normale, Fuoco, Acqua, Erba, Elettro, Lotta, Veleno, Terra, Volante, Psico, Coleottero, Roccia, Spettro, Drago, Buio, Acciaio, Folletto, Ghiaccio, Allenatore, Oggetto
+`Normale` · `Fuoco` · `Acqua` · `Erba` · `Elettro` · `Lotta` · `Veleno` · `Terra` · `Volante` · `Psico` · `Coleottero` · `Roccia` · `Spettro` · `Drago` · `Buio` · `Acciaio` · `Folletto` · `Ghiaccio` · `Allenatore` · `Oggetto`
 
 ---
 
