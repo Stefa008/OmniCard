@@ -33,10 +33,7 @@ Un'app iOS per collezionisti di carte da gioco collezionabili (TCG), costruita i
 
 | Requisito | Versione |
 |---|---|
-| iOS | 17.0+ |
-| Xcode | 15.0+ |
-| Swift | 5.9+ |
-| Framework | SwiftUI, PhotosUI, UniformTypeIdentifiers |
+| iOS | 26.4+ |
 
 ---
 
@@ -55,46 +52,10 @@ Un'app iOS per collezionisti di carte da gioco collezionabili (TCG), costruita i
 
 1. Scarica l'ultima versione di `OmniCard.ipa` dalla sezione [Releases](https://github.com/stefa008/OmniCard/releases)
 2. Sideload tramite AltStore (**+** in basso → seleziona il file IPA) oppure con [Sideloadly](https://sideloadly.io)
-
-### Metodo 3 — Compilazione da sorgente
-
-1. Clona il repository:
-   ```bash
-   git clone https://github.com/stefa008/OmniCard.git
-   ```
-2. Apri `OmniCard.xcodeproj` in Xcode
-3. Seleziona il tuo dispositivo o simulatore
-4. Premi **Run** (`⌘R`)
-
-Non sono richieste dipendenze esterne né Swift Package Manager.
-
+   
 ---
 
-## Architettura
-
-L'app è strutturata in un singolo file SwiftUI con sezioni MARK ben definite:
-
-```
-ContentView                  ← Entry point, TabView principale
-├── CollectionView           ← Griglia carte con filtri e ricerca
-│   ├── CardWidget           ← Componente cella della griglia
-│   └── CardDetailView       ← Vista dettaglio di una singola carta
-├── CardForm                 ← Form aggiunta/modifica carta
-│   └── CameraPresenter      ← Presentazione UIKit diretta per fotocamera
-│       └── CameraCoordinator
-├── SettingsView             ← Profilo, set, backup, dark mode
-└── FilterChip               ← Componente chip filtro riutilizzabile
-
-Modello dati
-├── OmniCard                 ← Struct carta (Identifiable, Equatable, Codable)
-└── OmniBackup               ← Struct backup completo
-
-Servizi
-├── OmniFileManager          ← Salvataggio/caricamento immagini su disco
-└── OmniConstants            ← Tipi carta, rarità, chiavi UserDefaults
-```
-
-### Decisioni tecniche notevoli
+### Decisioni tecniche 
 
 **Fotocamera via UIKit diretto** — La presentazione della `UIImagePickerController` avviene tramite `CameraPresenter`, che risale la catena dei `presentedViewController` fino al top. Questo evita il crash garantito causato dall'annidamento di un `fullScreenCover` dentro un `.sheet` su hardware reale.
 
@@ -103,24 +64,6 @@ Servizi
 **Nessuna dipendenza esterna** — L'app usa esclusivamente framework Apple nativi.
 
 ---
-
-## Struttura dati
-
-### `OmniCard`
-
-| Campo | Tipo | Descrizione |
-|---|---|---|
-| `id` | `UUID` | Identificatore univoco |
-| `name` | `String` | Nome della carta |
-| `setName` | `String` | Set di appartenenza |
-| `type` | `String` | Tipo della carta (con emoji) |
-| `cardNumber` | `String` | Numero della carta nel set |
-| `totalInSet` | `String` | Numero totale di carte nel set |
-| `rarity` | `String` | Rarità (Comune → Fuori Serie) |
-| `isHolofoil` | `Bool` | Flag olografica |
-| `quantity` | `Int` | Quantità posseduta |
-| `marketValue` | `Double` | Valore di mercato in EUR |
-| `imagePath` | `String?` | Nome file immagine locale |
 
 ### Rarità disponibili
 
@@ -141,24 +84,6 @@ Il backup esporta un file `OmniCard_Global_Backup.json` contenente:
 - Il percorso dell'immagine profilo
 
 > ⚠️ Le immagini delle carte **non** sono incluse nel backup JSON — sono salvate nella `documentDirectory` del dispositivo. Per un backup completo, considera di includere anche quella cartella tramite iTunes/Finder o iCloud.
-
----
-
-## Contribuire
-
-Pull request e issue sono benvenute. Per modifiche sostanziali, apri prima una issue per discutere cosa vorresti cambiare.
-
-1. Fai un fork del progetto
-2. Crea il tuo branch (`git checkout -b feature/nuova-funzionalita`)
-3. Committa le modifiche (`git commit -m 'Aggiunge nuova funzionalità'`)
-4. Pusha il branch (`git push origin feature/nuova-funzionalita`)
-5. Apri una Pull Request
-
----
-
-## Licenza
-
-Distribuito sotto licenza MIT. Vedi `LICENSE` per i dettagli.
 
 ---
 
