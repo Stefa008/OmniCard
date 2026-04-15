@@ -23,9 +23,9 @@ Un'app iOS per collezionisti di carte da gioco collezionabili (TCG), costruita i
 
 > *Aggiungi qui gli screenshot dell'app (Simulatore o dispositivo reale)*
 
-| Collezione | Dettaglio Carta | Aggiungi Carta | Impostazioni |
+| Collezione | Modifica | Aggiungi Carta | Impostazioni |
 |---|---|---|---|
-| *(screenshot)* | *(screenshot)* | *(screenshot)* | *(screenshot)* |
+| ![Collezione](screenshots/collezione.png) | ![Collezione](screenshots/modifica.png) | ![Collezione](screenshots/aggiungi.png)| ![Collezione](screenshots/impostazioni.png)|
 
 ---
 
